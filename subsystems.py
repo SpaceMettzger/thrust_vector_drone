@@ -22,12 +22,14 @@ class Motor:
         self.power_ratio = self.MOTOR_PARAMETERS[model]["power_ratio"]
         self.propeller_radius = self.MOTOR_PARAMETERS[model]["propeller_radius"] / 100  # cm to meters
 
+
 class Deflector:
     def __init__(self):
         self.max_deflection_deg = 25 # in degrees
         self.max_deflection_per_sec = 15
         self.current_x_deflection_deg = 0
         self.current_y_deflection_deg = 0
+
 
 class DroneState:
     def __init__(self):
@@ -40,12 +42,14 @@ class DroneState:
     def __repr__(self):
         return f"Pos: {self.position}, Vel: {self.velocity}, Acc: {self.acceleration}"
 
+
 class FlightLog:
     def __init__(self):
         self.records = []
 
     def add_state(self, state: DroneState, timestamp: float):
         self.records.append({'t': timestamp, 'state': state})
+
 
 class Controller:
     def __init__(self):
